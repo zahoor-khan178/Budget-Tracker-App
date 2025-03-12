@@ -1,0 +1,41 @@
+
+
+/* Sidebar (Nav) Styling */
+.sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 20px 0;
+  }
+  
+  .sidebar-link {
+
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    /* transition: background-color 0.3s ease; */
+  }
+  
+  .sidebar-link:hover {
+    background-color: #007bff;
+  }
+  
+  .sidebar-link:active {
+    background-color: #0056b3;
+  }
