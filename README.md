@@ -18,8 +18,8 @@ This is a full-stack budget tracker application built using the MERN stack (Mong
 
 * **Frontend:**
     * React.js
-    * HTML5
-    * CSS3
+    * HTML
+    * CSS
     * Chart.js (for bar graph)
 * **Backend:**
     * Node.js
