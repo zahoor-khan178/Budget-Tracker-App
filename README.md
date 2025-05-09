@@ -26,7 +26,5 @@ This is a full-stack budget tracker application built using the MERN stack (Mong
     * Express.js
 * **Database:**
     * MongoDB
-* **Other:**
-    * npm or yarn
-    * Git
+
 
