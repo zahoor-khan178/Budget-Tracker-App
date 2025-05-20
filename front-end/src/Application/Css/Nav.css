@@ -3,7 +3,8 @@
 /* Sidebar (Nav) Styling */
 .sidebar {
     background-color: #333;
-    color: white;
+    background-color: white;
+    color: black;
     width: 250px;
     height: 100vh;
     padding: 20px;
@@ -24,7 +25,7 @@
   .sidebar-link {
 
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 18px;
     display: block;
     padding: 10px;
@@ -34,8 +35,249 @@
   
   .sidebar-link:hover {
     background-color: #007bff;
-  }
+  } 
   
-  .sidebar-link:active {
+   .sidebar-link:active {
     background-color: #0056b3;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen and (min-width:2561px ) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 20vw;
+        border-top-right-radius: 5px;
+        position: fixed;
+        background-color: #333;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 1.5vw;
+        color: white;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: #007bff;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}
+
+@media screen and (max-width:2560px ) and (min-width:1440px) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 20vw;
+        border-top-right-radius: 5px;
+        position: fixed;
+        background-color: #333;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 1.5vw;
+        color: white;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: #007bff;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}
+
+@media screen and (max-width:1440px ) and (min-width:1024px) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 20vw;
+        border-top-right-radius: 5px;
+        position: fixed;
+        background-color: #333;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 1.5vw;
+        color: white;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: #007bff;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width:769px) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 25vw;
+        border-top-right-radius: 5px;
+        position: fixed;
+        background-color: #333;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 1.5vw;
+        color: white;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: #007bff;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 50vw;
+        box-shadow: 0 5px 20px 3px black;
+        border-top-right-radius: 5px;
+        position: fixed;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 2vw;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: white;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sidebar {
+        display: flex;
+        z-index: 1;
+        width: 60vw;
+        box-shadow: 0 5px 20px 3px black;
+        border-top-right-radius: 5px;
+        position: fixed;
+    }
+
+    .sidebar ul {
+        margin-top: 15vh;
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .sidebar-link {
+        font-size: 3.5vw;
+    }
+
+    .sidebar li {
+        margin: 3vh 0;
+    }
+
+    .sidebar-link:hover {
+        background-color: white;
+    }
+
+    .sidebar-link:active {
+        background-color: none;
+    }
+}

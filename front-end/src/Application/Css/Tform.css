@@ -1,188 +1,478 @@
 
 
-/* General Styling */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0; /* Remove body margin for full-height layout */
-  }
-  
-  /* Container Styling */
-  #parent-div {
-    
-    margin-top: -15%;
+
+
+
+
+
+
+@media screen and (min-width: 2561px)  {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+ #parent-div {
+    margin-top: 8vh;
+    padding: 6vh 0;
     background-color: #fff;
-    padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px; 
-    /* Increased max-width for larger screens */
-    height: 120%;
+    width: 30vw;
+    height:auto;
     display: flex;
     flex-direction: column;
-    /* column-gap:30px; */
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
   }
-  
-  /* Increase the height of the transaction form */
+
+  h2 {
+    font-size: 2vw;
+  }
+
   form {
     display: flex;
+    width: 80%;
+    height: fit-content;
     flex-direction: column;
-    gap: 15px;
-    min-height: 300px; /* Increased the height of the form */
+    justify-content: flex-start;
+    gap: 5vh;
+    height: auto;
   }
-  
+
   label {
-    font-size: 14px;
-    margin-bottom: -30px;
+    font-size: 1vw;
     color: #555;
   }
-  
+
   input[type="text"],
   input[type="number"] {
-    padding: 15px; /* Increased padding for larger input fields */
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 1vw;
     width: 100%;
+    height: 7vh;
     box-sizing: border-box;
-    
+    margin-top: 1vh;
+    text-align: center;
   }
-  
-  .radio {
-    position: relative;
-    left: 10px;
-    padding: 5px;
+
+  #container-radio{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
-  
-  input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  input[type="radio"]:checked {
-    accent-color: #4caf50;
-  }
-  
-  /* Error Messages */
-  span {
-    font-size: 12px;
-    color: red;
-    margin-top: 5px;
-  }
-  
-  /* Submit Button */
+
+span{
+  font-size: 1vw;
+}
   button {
-    padding: 12px 0;
-    font-size: 16px;
+    padding: 2vh 0;
+    font-size: 1vw;
     background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
   }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    #parent-div {
-      padding: 15px;
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    h2 {
-      font-size: 20px;
-    }
-  
-    label {
-      font-size: 12px;
-    }
-  
-    input[type="text"],
-    input[type="number"] {
-      font-size: 14px;
-    }
-  
-    button {
-      font-size: 14px;
-    }
-  
-    /* Transaction list and form inputs stack vertically on smaller screens */
-    .transaclist-container {
-      width: 100%;
-      margin: 0 10px;
-    }
-  
-    /* Stack summary items on smaller screens */
-    .summary-items-container {
-      flex-direction: column;
-      gap: 20px; /* Add gap between stacked items */
-    }
-  
-    .summary-item {
-      width: 100%; /* Make items full width on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h2 {
-      font-size: 18px;
-    }
-  
-    .summary-item {
-      width: 100%;
-      padding: 15px;
-    }
-  
-    .chart-container {
-      height: 300px;
-    }
-  
-    .summary-item h3 {
-      font-size: 1.2rem;
-    }
-  
-    .summary-item p {
-      font-size: 1.5rem;
-    }
-  
-    #parent-div {
-      padding: 10px;
-      gap: 15px;
-    }
+}
+
+@media screen and (max-width: 2560px) and (min-width:1440px) {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+#parent-div {
+    margin-top: 3vh;
+    padding: 10vh 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30vw;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
   }
 
-
-  form>div{
-
-    margin-top: 20px;
+  h2 {
+    font-size: 2vw;
   }
-  button{
 
-    margin-top: 20px;
+  form {
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+    height: auto;
   }
-  
-  
-  
-  
-  
+
+  label {
+    font-size: 1vw;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 1vw;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  #container-radio{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+span{
+  font-size: 1vw;
+}
+  button {
+    padding: 2vh 0;
+    font-size: 1vw;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width:1024px) {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+  #parent-div {
+    margin-top: 3vh;
+    padding: 10vh 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30vw;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  h2 {
+    font-size: 4vw;
+    padding-top: 15vh;
+  }
+
+  form {
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3vh;
+    height: auto;
+  }
+
+  label {
+    font-size: 1vw;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 1vw;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  #container-radio{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+span{
+  font-size: 1vw;
+}
+  button {
+    padding: 2vh 0;
+    font-size: 1vw;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width:769px) {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+ #parent-div {
+    margin-top: 4vh;
+    padding: 4vh 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 35vw;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  h2 {
+    font-size: 6vw;
+    padding-top: 15vh;
+  }
+
+  form {
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+    height: auto;
+  }
+
+  label {
+    font-size: 1.5vw;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.5vw;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  #container-radio{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+span{
+  font-size: 1.5vw;
+}
+  button {
+    padding: 2vh 0;
+    font-size: 2vw;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+  #parent-div {
+    margin-top: 0;
+    padding-top: 6vh ;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+  }
+
+  h2 {
+    font-size: 6vw;
+    padding-top: 15vh;
+  }
+
+  form {
+    display: flex;
+    width: 50%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+    height: auto;
+  }
+
+  label {
+    font-size: 2vw;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 2vw;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  #container-radio{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+span{
+  font-size: 2vw;
+}
+  button {
+    padding: 2vh 0;
+    font-size: 2vw;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+ *{
+  padding: 0;
+  margin: 0;
+ }
+
+  #parent-div {
+    margin-top: 0;
+    padding-top: 4vh ;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+  }
+
+  h2 {
+    font-size: 6vw;
+    padding-top: 15vh;
+  }
+
+  form {
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+    height: auto;
+  }
+
+  label {
+    font-size: 4vw;
+    color: #555;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    font-size: 4vw;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    text-align: center;
+  }
+
+  #container-radio{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+span{
+  font-size: 3vw;
+}
+  button {
+    padding: 2vh 0;
+    font-size: 4vw;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+    margin-top: 4vh;
+  }
+}

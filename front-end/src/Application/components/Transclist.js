@@ -1,26 +1,16 @@
 import { useState, useEffect } from "react";
 import '../Css/Tlist.css'
-// import './Transaclist.css'; // Import the CSS
+
+
+
+
+
 
 const Transaclist = () => {
-  // State to store the transaction data
+
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  // Fetch the transaction data from the backend API when the component mounts
-  // useEffect(() => {
-  //   fetch('http://localhost:11000/list') // Ensure this URL matches your backend endpoint
-  //     .then((response) => response.json())  // Parse the JSON response.convert data into javaScritp object form
-  //     .then((data) => {
-  //       setTransactions(data);  // Set the transaction data
-  //       setLoading(false);  // Set loading to false once data is fetched
-  //     })
-  //     .catch((error) => {
-  //       setError(error);  // Handle any error
-  //       setLoading(false);
-  //     });
-  // }, []); // Empty dependency array ensures this runs only once when the component mounts
 
 
   useEffect(()=>{

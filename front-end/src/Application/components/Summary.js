@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Css/Summary.css';
+
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -12,21 +12,19 @@ const Summary = () => {
   const [totalBalance, setTotalBalance] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        
         const incomeResponse = await fetch('http://localhost:11000/income-sum');
         const incomeData = await incomeResponse.json();
         setTotalIncome(incomeData.totalIncome);
 
-        // Fetch total expense
         const expenseResponse = await fetch('http://localhost:11000/expense-sum');
         const expenseData = await expenseResponse.json();
         setTotalExpense(expenseData.totalExpense);
 
-        // Calculate total balance
         setTotalBalance(incomeData.totalIncome - expenseData.totalExpense);
 
         setLoading(false);
@@ -39,7 +37,88 @@ const Summary = () => {
     fetchData();
   }, []);
 
-  // Render loading or error
+  useEffect(() => {
+    const updateChartOptions = () => {
+      const baseFontSize2560 = 28;
+      const mobile1440FontSize = 16;
+      const mobile1024FontSize = 10;
+      const mobileFontSize = 8;
+      const mobile310FontSize = 6;
+      const mobile245FontSize = 3;
+      const isMobile1440 = window.innerWidth <= 1440;
+      const isMobile1024 = window.innerWidth <= 1024;
+      const isMobile = window.innerWidth <= 450;
+      const isMobile310 = window.innerWidth <= 310;
+      const isMobile245 = window.innerWidth <= 245;
+
+      const currentFontSize = isMobile245 ? mobile245FontSize : (isMobile310 ? mobile310FontSize : (isMobile ? mobileFontSize : (isMobile1024 ? mobile1024FontSize : (isMobile1440 ? mobile1440FontSize : baseFontSize2560 )) ));
+
+      const newOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Financial Summary',
+            font: {
+              size: currentFontSize,
+            },
+          },
+          tooltip: {
+            bodyFontSize: currentFontSize,
+            titleFontSize: currentFontSize,
+            footerFontSize: currentFontSize,
+            bodyFont: {
+              size: currentFontSize,
+            },
+            titleFont: {
+              size: currentFontSize,
+            },
+            footerFont: {
+              size: currentFontSize,
+            },
+            padding: 12,
+            callbacks: {
+              label: (context) => {
+                const label = `$${context.raw.toFixed()}`;
+                return label;
+              },
+            },
+            labelFont: {
+              size: currentFontSize,
+            }
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: (value) => `$${value.toFixed()}`,
+              font: {
+                size: currentFontSize,
+              },
+            },
+          },
+          x: {
+            ticks: {
+              font: {
+                size: currentFontSize,
+              },
+            },
+          },
+        },
+      };
+      setChartOptions(newOptions);
+    };
+
+    updateChartOptions();
+    window.addEventListener('resize', updateChartOptions);
+
+    return () => {
+      window.removeEventListener('resize', updateChartOptions);
+    };
+  }, []);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -48,54 +127,24 @@ const Summary = () => {
     return <div>{error}</div>;
   }
 
-  // Prepare the data for the graph
   const data = {
-    labels: ['Total Income', 'Total Expense', 'Total Balance'], // x-axis labels
+    labels: ['Total\nIncome', 'Total\nExpense', 'Total\nBalance'],
     datasets: [
       {
         label: 'Amount ($)',
-        data: [totalIncome, totalExpense, totalBalance], // values to plot
-        backgroundColor: ['#4caf50', '#f44336', '#2196f3'], // colors for the bars
-        borderColor: ['#388e3c', '#d32f2f', '#1976d2'], // border color for the bars
-        borderWidth: 1, // border width
+        data: [totalIncome, totalExpense, totalBalance],
+        backgroundColor: ['#4caf50', '#f44336', '#2196f3'],
+        borderColor: ['#388e3c', '#d32f2f', '#1976d2'],
+        borderWidth: 1,
       },
-    ]
-  };
-
-  // Graph options
-  const options = {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Financial Summary',
-      },
-      tooltip: {
-        callbacks: {
-          label: (tooltipdata) => {
-            return `$${tooltipdata.raw.toFixed(2)}`; // Format the tooltip value to show with 2 decimal places
-          },
-        },
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true, // Start the y-axis at 0
-        ticks: {
-          callback: (value) => `$${value.toFixed(2)}`, // Format y-axis labels as currency
-        },
-      },
-    },
+    ],
   };
 
   return (
     <div className="financial-summary-container">
-      {/* Chart container */}
       <div className="chart-container">
-        <Bar data={data} options={options} />
+        <Bar data={data} options={chartOptions} />
       </div>
-
-      {/* Summary Items */}
       <div className="summary-items-container">
         <div className="summary-item income">
           <h3>Total Income</h3>
