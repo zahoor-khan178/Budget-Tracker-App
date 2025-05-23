@@ -65,9 +65,7 @@ const Summary = () => {
             },
           },
           tooltip: {
-            bodyFontSize: currentFontSize,
-            titleFontSize: currentFontSize,
-            footerFontSize: currentFontSize,
+            
             bodyFont: {
               size: currentFontSize,
             },
